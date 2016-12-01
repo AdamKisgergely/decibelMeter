@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Decibel számolás</ion-title>
+  </ion-navbar>
+
+<style>
+p {text-align:center;}
+.button {
+    background-color: #98FB98;
+    border: #000080;
+    border-style: solid;
+    border-width: 15px;
+    color: 	#000080;
+    padding: 60px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 40px 2px;
+    cursor: pointer;
+    
+}
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -59px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+</style>
+</ion-header>
+
+<ion-content padding>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  <div class="w3-panel w3-padding-128 w3-blue">
+    <h2 align="center" > 
+      <font color = "yellow">Decibel mérőről röviden:</font>
+    </h2>
+    <p>
+      <font color = "yellow">
+        A program a készülék mikrofonját használja fel. A mérés az allul található "Start" gombal indítható el, míg a "Stop" gombal állítható meg. A futás ideje alatt mintavételezett adatok számát és átlagát jelenítjük meg.
+      </font>
+    </p>
+  
+  </div>
+  <div class="w3-panel w3-padding-128 w3-blue">
+      <h1 align="center" >
+        <font color = "yellow">Mért adatok száma : {{dbSzam}}</font>
+      </h1>
+      <h1 align="center" >
+        <font color = "yellow">[ {{dbSzam}} ]</font>
+      </h1>
+      <h1 align = "center">
+        <font color = "yellow">Mért adatok átlaga : </font>
+      </h1>
+      <h1 align="center" >
+        <font color = "yellow">[ {{dbDB}} ]</font>
+      </h1>
+            <h1 align = "center">
+        <font color = "yellow">Minimuma / Maximum : </font>
+      </h1>
+      <h1 align="center" >
+        <font color = "yellow">[ {{dbMin}} ]/[ {{dbMax}} ]</font>
+      </h1>
+      <h1>{{errMessage}}</h1>
+  </div>
+
+  <div class="w3-panel w3-padding-128 w3-blue">
+    <button ion-button style="float: left" (click) = "startMeres">Start</button>
+    <button ion-button style="float: right" (click) = "stopMeres">Stop</button>
+  </div>
+
+
+</ion-content>
