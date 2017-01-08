@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DBMeter } from 'ionic-native';
 
+
 @Component({
   selector: 'page-decibelPage',
   templateUrl: 'decibelPage.html'
 })
+
 export class decibelPage {
   dbErtek;
   dbSzam;
